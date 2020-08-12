@@ -1,0 +1,41 @@
+有一种题型是，选取前K个element。这种题一般quicksort 或者sort hashMap。
+题目：
+Q692 Top K frequent word
+Q347 Top K Frequent Elements
+
+ 思路1: 用map记录每个元素出现的次数，然后建立一个存放了key的array，然后用collection sort sort一下key get到的value，然后取前K个。
+ 有的题要求多一些，不仅要比较值，还要比较string。那么如果值不相等，则比较值。如果值相等，比较string的字母顺序。
+ String : a. compareTo(b)  a字母顺序靠前！
+ Number: 
+ Sort list by greatest count to least  
+ Collections.sort(list, (Integer a, Integer b) -> map.get(b) - map.get(a));   
+ 
+        
+ 思路2， quicksort
+//也是先用map来记录出现的次数，然后根据出现次数排序。选一个pivot放到末尾，用quicksort来把frequency小于pivot放在左边，大于pivot的放在右边。
+然后把pivot放在该放的位置。 frequency从小到大排序，左边有N-K 个less frequent，右边就有K个frequent。 取右边K个。
+       
+
+ public List<String> topKFrequent(String[] words, int k) {
+        HashMap<String,Integer>map=new HashMap<>();
+     
+        for(String w:words){
+            map.put(w, map.getOrDefault(w,0)+1);
+        }
+        int n=map.size();
+        //create a list of size n
+         List<String> list=new ArrayList<String>(map.keySet());
+
+        
+         ArrayList<String> res=new ArrayList<String>(n);
+        
+        //sort by frequency大到小。 
+        //如果get的值相等， compare string lexi order，else，sort by value. 
+ Collections.sort(list,(a,b)->map.get(a)==map.get(b)? a.compareTo(b) : map.get(b)-map.get(a));      
+         
+            for(int i=0;i<k;i++){
+                res.add(list.get(i));
+            }  
+            return res;
+    }
+    
