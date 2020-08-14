@@ -1,0 +1,28 @@
+Priority Queue and Heap FIFO
+对于java的PQ来说，sorting顺序是不变的，bCompareTo(a) 还是表示b的字母顺序高。
+a-b还是表示   a小b大。
+
+ // Creating empty priority queue
+        PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
+
+ 
+public peek(): This method retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.
+public poll(): This method retrieves and removes the head of this queue, or returns null if this queue is empty
+
+
+使用PriorityQueue实现Maxheap:
+
+PriorityQueue默认是一个小顶堆，然而可以通过传入自定义的Comparator函数来实现大顶堆。如下代码：
+private static final int DEFAULT_INITIAL_CAPACITY = 11;
+PriorityQueue<Integer> maxHeap=new PriorityQueue<Integer>(DEFAULT_INITIAL_CAPACITY, new Comparator<Integer>() {
+       @Override
+       public int compare(Integer o1, Integer o2) {               
+           return o2-o1;
+return o2.compareTo(o1);
+
+
+       }
+   })
+
+*(1) 写成return o1.compareTo(o2) 或者 return o1-o2表示升序
+*(2) 写成return o2.compareTo(o1) 或者return o2-o1表示降序
