@@ -1,0 +1,40 @@
+  思路2: min heap。 先对会议starting time 排序，然后规定min heap规则为ending time 最早的放在最上面.
+遍历整个array，每次peek最顶上的。 
+NOT FREE：  
+如果top element 没有空出来，把新的下一个interval的ending time放进heap。heap 多了一个元素，size+1. （没空出来的意思是顶上的ending time > 下一个intervals的starting time, 即[i][0]. 则room+1) ；
+IS FREE：扔了top再放个新的进去。
+poll top element. 如果top element 空出来了,把顶上的ending time扔了，来个新的ending time（ending time < 下一个startting），room is free，赋值为新的ending time，加回heap
+
+class Solution {
+    public int minMeetingRooms(int[][] intervals) {
+      Arrays.sort(intervals, new Comparator<int[]>() {
+            public int compare( int[] item1,  int[] item2) {
+            //sort by starting time
+               return item1[0]-item2[0];
+            }
+          });
+    PriorityQueue<Integer>pq=new PriorityQueue<>();
+        
+     pq.add(intervals[0][1]);//ending time of earlist room
+     
+      for(int i=1;i<intervals.length;i++){
+            //如果空出来了,下一个meeting的starting time在peak后面
+            if(intervals[i][0]>=pq.peek()){
+                //assign this room,heap有别的新的ending time，然后这个重新放进heap with new ending time
+                pq.poll();
+            }
+            //if not，get a new room and add to heap
+            //如果空出来了，更新新的时间
+            pq.add(intervals[i][1]);
+        }
+        
+        return pq.size();
+        
+        
+    
+    
+    
+    
+    
+    }
+    }
