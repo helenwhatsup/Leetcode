@@ -17,7 +17,7 @@
  * DFS	深度优先搜索
  * BFS	广度优先搜索
 
-*题型*
+# *题型*
 ---
  
  * Sliding Window	滑动窗口问题
@@ -25,4 +25,10 @@
  * Merge Intervals	区间合并问题
  * BackTracking	回溯
  * Bit Manipulation	位运算
+ 
+ 
+ *题目*
+---
+** Tree
+Easy: Recursion+ Preorder Q101,104,226,94,257,145,144, 100,  Lintcode 596. 
 
