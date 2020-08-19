@@ -1,4 +1,5 @@
 ## Q1 ReverseDigits
+12345-> 21435. 
   
 
                                 public int reversedigit(int n){
