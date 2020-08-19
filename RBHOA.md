@@ -25,6 +25,7 @@
 ## Q2 Sum of String
 String s1 = "11";
 String s2 = "9";
+Output： ”110“
 
 
 	public String add(String s1, String s2){
