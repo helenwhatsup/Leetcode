@@ -44,3 +44,28 @@ Output： ”110“
 		return res;
 	}
   
+## Q3 NUm of even digit
+		import java.util.*;
+
+		class evendigit {
+			public static void main(String[] args){
+				evendigit instance = new evendigit();
+				int a = 2468;
+			System.out.println(instance.evendigit(a));
+			//return 4.
+			}
+
+			public int evendigit(int a){
+			int res=0;
+			String s=a+"";
+			for(int i=0;i<s.length();i++){
+			    if(Integer.parseInt(s.charAt(i)%2==0){
+			    res=res+1;
+			    })
+			}
+			    return res;
+			}
+		}
+
+
+
