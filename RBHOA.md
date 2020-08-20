@@ -143,7 +143,7 @@ Output： ”110“
     }
 
 
-##Q5 calculate alternating sum
+## Q5 calculate alternating sum
 
 //eg. input 123456, return 1-2+3-4+5-6 = -3
 
