@@ -67,5 +67,80 @@ Output： ”110“
 			}
 		}
 
+## Q4 Rotate over diagonal (n=1,rotate 90; n=2,rotate 180,n=3,rotate 270)
+			  int M[][] = { {1, 2, 3}, 
+					{4, 5, 6},     
+					{7, 8, 9}}; 
+		90:
+				1 4 3 
+				8 5 2 
+				7 6 9 
+
+    import java.util.*;
+
+    class rotateMatrix {
+        public int[][] rotate(int[][] M, int n){
+            if(n==1){
+                int[][]res=rotate90(M);
+                return res;
+            }
+            if(n==2){
+                int[][]res=rotate180(M);
+                return res;
+            }
+            if(n==3){
+                int[][]res=rotate270(M);
+                return res;
+            }
+        }
+
+        public int[][] rotate90(int[][]M){
+            int l=M.length();
+            int result=new int[n][n];
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    //diagonal and anti-diagonal
+                    if(i+j==n-1|| i==j){
+                        res[i][j]==M[i][j];
+                    }else{
+                        res[j][n-1-i]=M[i][j];
+                    }
+                }
+            }
+                return res;
+        }
+
+        public int[][] rotate180(int[][]M){
+            int l=M.length();
+            int result=new int[n][n];
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    //diagonal and anti-diagonal
+                    if(i+j==n-1|| i==j){
+                        res[i][j]==M[i][j];
+                    }else{
+                        res[n-1-i][n-1-j]=M[i][j];
+                    }
+                }
+            }
+                return res;
+        }
+        public int[][] rotate270(int[][]M){
+            int l=M.length();
+            int result=new int[n][n];
+            for(int i=0;i<n;i++){
+                for(int j=0;j<n;j++){
+                    //diagonal and anti-diagonal
+                    if(i+j==n-1|| i==j){
+                        res[i][j]==M[i][j];
+                    }else{
+                        res[n-1-j][i]=M[i][j];
+                    }
+                }
+            }
+                return res;
+        }
+    }
+
 
 
