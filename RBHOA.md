@@ -143,4 +143,29 @@ Output： ”110“
     }
 
 
+## calculate alternating sum
 
+//eg. input 123456, return 1-2+3-4+5-6 = -3
+
+    public static int altersum(int n) {
+        String s = Integer.toString(n);
+        int res=0;
+        //store in arr of digits
+
+        int[] arr = new int[s.length()];
+        for (int i = 0; i < s.length(); i++)
+        {
+            arr[i] = s.charAt(i) - '0';
+            //char to int 
+        }
+        //int to arr of digits
+        for(int i=0;i<arr.length;i++){
+            if(i%2==0){
+                res+=arr[i];
+            }else{
+                res-=arr[i];
+            }
+                    }
+                    return res;
+    }    
+}
