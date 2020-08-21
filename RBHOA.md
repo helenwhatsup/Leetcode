@@ -203,6 +203,60 @@ Output： ”110“
 				return count;
 
 				}
+## Q7 Sort diagonal  每条左上到右下diagonal都要sorted 
+			public int[][] sortDiagonals(int[][] matrix) {
+			    int n = matrix.length;
+			    if(n < 2) {
+				return matrix;
+			    } else {
+				for(int i = n - 2; i >= 0; i--) {
+				    int x = i;
+				    int y = 0;
+				    ArrayList<Integer> list = new ArrayList<>();
+				    while(y < n && x < n) {
+					list.add(matrix[x][y]);
+					y++;
+					x++;
+				    }
+				    Collections.sort(list);
+				    x = i;
+				    y = 0;
+				    while(y < n && x < n) {
+					matrix[x][y] = list.get(y);
+					y++;
+					x++;
+				    }
+				}
+				for(int j = 1; j < n - 1; j++) {
+				    int x = 0;
+				    int y = j;
+				    ArrayList<Integer> list = new ArrayList<>();
+				    while(y < n && x < n) {
+					list.add(matrix[x][y]);
+					y++;
+					x++;
+				    }
+				    Collections.sort(list);
+				    x = 0;
+				    y = j;
+				    while(y < n && x < n) {
+					matrix[x][y] = list.get(x);
+					y++;
+					x++;
+				    }
+				}
+				return matrix;
+			    }
+			}
+
+			public static void print2D(int mat[][]) 
+			{ 
+			    for (int[] row : mat) 
+				System.out.println(Arrays.toString(row)); 
+			} 
+			}
+
+
 
 
 
