@@ -171,7 +171,7 @@ Output： ”110“
 }
 
 
-## 6 RemoveDigit
+## Q6 RemoveDigit
 * Calculate how many ways exactly one digit could be removed from one of the strings so that s is lexicographically smaller than t
 
 				int removeOne(String s, String t){
