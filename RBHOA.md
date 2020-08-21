@@ -258,5 +258,30 @@ Output： ”110“
 
 
 
+## Q8 Good Tuple
+		public static void main(String args[]) {
+		       // int[] arr2 = new int[]{1, 2, 3,4, 4, 5,5,6,6, 6};
+			String s="11215323";
 
+        System.out.println(goodtuple(s));
+    }
+  	public static int goodtuple(String cur) {
+		if(cur.length() < 3) {
+			return 0;
+		}
+		int res = 0;
+		for(int i = 1; i < cur.length() - 1; i++){
+            HashSet<Character> set = new HashSet<>();
+            //Set集合中不允许添加重复的元素，如果有两个重复的话size就是2.
+			set.add(cur.charAt(i));
+			set.add(cur.charAt(i - 1));
+			set.add(cur.charAt(i + 1));
+			if(set.size() == 2) {
+				res++;
+			}
+		}
+		return res;
+	}
+
+}
 
