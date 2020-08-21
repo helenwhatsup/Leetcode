@@ -285,3 +285,23 @@ Output： ”110“
 
 }
 
+## Q9 divisorSubstrings
+* Give a number n and digit number k find the number of serial substring which is able to divisible n.
+
+		public static int findDivisor(int n, int k) {
+		    String big= n+"";
+		    int res=0;
+		    HashSet<Integer> set=new HashSet<>();
+		    for(int i=0;i<=big.length()-k;i++){
+			 int win=Integer.parseInt(big.substring(i,i+k-1));
+			 if(!set.contains(win)&& n%win==0){
+			     set.add(win);
+			     res++;
+			 }
+
+		    }
+		 return res;
+
+		 }
+
+
