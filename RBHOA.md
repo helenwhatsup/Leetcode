@@ -169,3 +169,40 @@ Output： ”110“
                     return res;
     }    
 }
+
+
+## 6 RemoveDigit
+* Calculate how many ways exactly one digit could be removed from one of the strings so that s is lexicographically smaller than t
+
+				int removeOne(String s, String t){
+				int slen=s.length();
+				int tlen=t.length();
+				int count=0;
+
+				for(int i=0;i<slen;i++){
+				    if(s.charAt(i)-'0'>=0 && s.charAt(i)<=9){
+					//i+1 is starting index
+					String tmp=s.substring(0,i)+s.substring(i+1);
+					if(tmp.compareTo(t)<0){
+					    count++;
+					}
+
+				    }
+				}
+
+				for(int j=0;j<tlen;j++){
+				    if(s.charAt(j)-'0'>=0 && s.charAt(j)<=9){
+					//i+1 is starting index
+					String tmp=t.substring(0,j)+t.substring(j+1);
+					if(s.compareTo(tmp)<0){
+					    count++;
+					}
+
+				    }
+				}
+				return count;
+
+				}
+
+
+
