@@ -258,7 +258,7 @@ Output： ”110“
 
 
 
-## Q8 Good Tuple
+## Q8 Good Tuple: exactly two out of three are equal. use hashset and if size maintains 2, res++
 		public static void main(String args[]) {
 		       // int[] arr2 = new int[]{1, 2, 3,4, 4, 5,5,6,6, 6};
 			String s="11215323";
