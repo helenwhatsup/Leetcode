@@ -4,6 +4,7 @@
 
 
                                 void bfs(TreeNode root) {
+                                      List<List<Integer>> list = new ArrayList<>();
                                                 Queue<TreeNode> queue = new ArrayDeque<>();
                                                 queue.add(root);
                                                 while (!queue.isEmpty()) {
