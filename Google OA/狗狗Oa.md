@@ -7,7 +7,7 @@ Input: "aaaa"
 Output: 3   
 Explanation: we can get a - aaa, aa - aa, aaa- a   
 
-
+--- Sol1. 超时
 
     class Solution {
         public int numSplits(String s) {
@@ -41,3 +41,43 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
 
         }
     }
+
+--- Sol2. Good
+
+            class Solution {
+                public int numSplits(String s) {
+               if (s == null || s.length() == 0) {
+                  return 0;
+                }
+
+    Map<Character,Integer> counts = new HashMap<Character,Integer>();
+    
+    for(Character c: s.toCharArray()){
+        counts.put(c,counts.getOrDefault(c,0)+1);
+    }
+    
+    int ways = 0;
+    
+    Set<Character> leftChars = new HashSet<Character>();
+    for (int i = 0; i < s.length() - 1; i++) {
+      char curr = s.charAt(i);
+      leftChars.add(curr);
+      
+      int rightCount = counts.get(curr) - 1;
+      
+      if (rightCount == 0) {
+        counts.remove(curr);
+      } else {
+        counts.put(curr, rightCount);
+      }
+      
+      if (leftChars.size() == counts.size()) {
+        ways++;
+      }
+    }
+    
+    return ways;
+      }
+    }
+
+    
