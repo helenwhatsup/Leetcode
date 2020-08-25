@@ -4,13 +4,13 @@
 Return the number of good splits you can make in s.
 
 
-class Solution {
-    public int numSplits(String s) {
-    HashMap<Character,Integer> map= new HashMap<>();
-     HashSet<Character> left= new HashSet<>();
-     HashSet<Character>right= new HashSet<>();
-        int count=0;
-        int n=s.length();
+    class Solution {
+        public int numSplits(String s) {
+        HashMap<Character,Integer> map= new HashMap<>();
+         HashSet<Character> left= new HashSet<>();
+         HashSet<Character>right= new HashSet<>();
+            int count=0;
+            int n=s.length();
        
         for(int i=0;i<s.length();i++){
             String l=s.substring(0,i);
