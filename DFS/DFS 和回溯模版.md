@@ -17,16 +17,18 @@ LC题目： 39，40，46，47，78，90
     
 ## 模版套路
 
-              result = []
-              def backtrack(路径, 选择列表):
-                  if 满足结束条件:
-                      result.add(路径)
-                      return
-                  for 选择 in 选择列表:
-                      做选择
-                      backtrack(路径, 选择列表)
-                      撤销选择
-                      
+              public void backtrack(路径，选择列表){
+                    if(满足结束条件){
+                        result.add(结果);
+                    }
+                    for(选择：选择列表){
+                        做出选择;
+                        backtrack(路径，选择列表);
+                        撤销选择;
+                    }
+                }
+
+
 
        List<List<Integer>> lists = new ArrayList<>();
           public List<List<Integer>> subsets1(int[] nums) {
