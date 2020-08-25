@@ -31,8 +31,8 @@ Return the number of good splits you can make in s.
            
             
         }
-return count;
+    return count;
 
 
+        }
     }
-}
