@@ -13,6 +13,8 @@ LC题目： 39，40，46，47，78，90
 搜索	解数独、单词搜索、N皇后、分割回文串、二进制手表
 
 
+**回溯算法关键在于:不合适就退回上一步 然后通过约束条件, 减少时间复杂度.
+    
 * 模版套路
 
               result = []
@@ -41,9 +43,9 @@ LC题目： 39，40，46，47，78，90
       private void process(List<Integer>list, int[] nums, int start){
           lists.add(new ArrayList(list));
           for(int i = start; i < nums.length; i++){
-            // 加入某判断条件！！
-              list.add(nums[i]);
-              process(list, nums, i+1);
-              list.remove(list.size()-1);
+            // 根据题目加入某判断条件！！
+              list.add(nums[i]); 将整数 nums[i] 添加到当前子集 
+              process(list, nums, i+1); 选择路径，继续向子集中添加整数：backtrack(i + 1, curr)。
+              list.remove(list.size()-1); 从 curr 中删除 nums[i] 进行回溯。
           }
       }
