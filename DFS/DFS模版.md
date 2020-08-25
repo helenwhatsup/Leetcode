@@ -1,0 +1,47 @@
+## DFS
+* 用处，题型
+
+
+LC题目： 39，40，46，47，78，90
+
+类型	题目链接
+子集、组合	子集、子集 II、组合、组合总和、组合总和 II
+全排列	全排列、全排列 II、字符串的全排列、字母大小写全排列
+搜索	解数独、单词搜索、N皇后、分割回文串、二进制手表
+
+
+* 模版套路
+
+              result = []
+              def backtrack(路径, 选择列表):
+                  if 满足结束条件:
+                      result.add(路径)
+                      return
+                  for 选择 in 选择列表:
+                      做选择
+                      backtrack(路径, 选择列表)
+                      撤销选择
+                      
+
+* List<List<Integer>> lists = new ArrayList<>();
+    public List<List<Integer>> subsets1(int[] nums) {
+        if(nums == null || nums.length ==0){
+            return lists;
+        }
+
+        List<Integer> list = new ArrayList<>();
+        process(list, nums, 0);
+        return lists;
+
+    }
+
+    private void process(List<Integer>list, int[] nums, int start){
+
+        lists.add(new ArrayList(list));
+        for(int i = start; i < nums.length; i++){
+          // 加入某判断条件！！
+            list.add(nums[i]);
+            process(list, nums, i+1);
+            list.remove(list.size()-1);
+        }
+    }
