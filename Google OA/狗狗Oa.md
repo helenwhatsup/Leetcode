@@ -128,5 +128,22 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
 
             }
             }
+## alphabet ordering
 
+
+    int main() {
+	
+	string s;
+	cin>>s;
+	if(s.size()==0){cout<<0;return 0;}
+	int ans=1;
+	for(int i=0;i<s.size();i++){
+	    ans++;
+	    while(i+1<s.size()&&s[i]<=s[i+1])i++;
+	    while(i+1<s.size()&&s[i]>=s[i+1])i++;
+	    
+	}
+	
+	cout<<ans;
+    
 
