@@ -270,5 +270,30 @@ gfc| bdh| dd-- output=3
 	}
 	
 	cout<<ans;
+-----
+	
+	public static void main(String[] args) {
+	    Scanner sc= new Scanner(System.in);
+	    String str = sc.nextLine();
+	    int cnt = 0 ;
+
+	    int n=str.length();
+	    for(int i = 0; i < n;i++){
+		cnt++;
+		boolean flag=false;
+		System.out.print(i + "  " );
+		while(i+1 <  n && str.charAt(i+1) > str.charAt(i)){
+		    flag=true;
+		    i++;
+		}
+		if(!flag){
+		    while(i+1 < n && str.charAt(i) >= str.charAt(i+1)){
+			i++;
+		    }                  
+		}   
+	    }
+	    System.out.println(cnt);
+	}
+
     
 
