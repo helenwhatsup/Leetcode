@@ -119,7 +119,7 @@ All elements are unique (distinct), so one value within an array will always be 
 		// or  return Arrays.copyOfRange(a, index, index+k);
 
 
-## Q2 Spilt String 
+## Q4 Spilt String 
 * You are given a string s, a split is called good if you can split s into 2 non-empty strings p and q where its concatenation is equal to s and the number of distinct letters in p and q are the same.
 
 Return the number of good splits you can make in s.
@@ -202,7 +202,7 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
     }
     
     --------
- ## Q3 maximum subarray
+ ## Q5 maximum subarray
  * Given array N and Int K, delete subarray of any size from array N so that the number of element > K and number of element <K are equal. 
  * Find maximum length of subarray after deletion. 
     
@@ -249,7 +249,7 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
 
             }
             }
-## Q4 alphabet ordering
+## Q6 alphabet ordering
 A string is a good string if all of its characters are monotone increasing or decreasing. 
 
 abcde| cba-- output=2
