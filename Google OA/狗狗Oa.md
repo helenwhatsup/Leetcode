@@ -1,4 +1,44 @@
 ## Google OA
+# Maximum Time
+* You are given a string that represents time in the format hh:mm. Some of the digits are blank (represented by ?). 
+Fill in ? such that the time represented by this string is the maximum possible. Maximum time: 23:59, minimum time: 00:00. You can assume that input string is always valid.
+
+	public class Maxtime {
+			// "static void main" must be defined in a public class.
+			public class Main {
+			    public static void main(String[] args) {
+				giveMeMaxTime("23:5?");// 23:59
+			    giveMeMaxTime("2?:22");// 23:22
+			    giveMeMaxTime("0?:??");// 09:59
+			    giveMeMaxTime("1?:??");// 19:59
+			    giveMeMaxTime("?4:??");// 14:59
+			    giveMeMaxTime("?3:??");// 23:59
+			    giveMeMaxTime("??:??");// 23:59
+			    giveMeMaxTime("?4:5?"); //14:59
+			    }
+    
+    public static void giveMeMaxTime(String time){
+        char[] timechar = time.toCharArray();
+        if(timechar[0]=='?'){
+        timechar[0]=(timechar[1]<='3' || timechar[1] =='?') ?'2':'1'; 
+        }
+        if(timechar[1]=='?'){
+        timechar[1]=(timechar[0]=='2')?'3':'9';
+        //如果第一个数字是2，那么第二个数字就是3，这样组合就是23，如果不是2，则可能为1 or 0，所以第二个数字就写9
+
+        }
+        // timechar[2]=：  不用动
+        // 如果timechar[3]=？ 则写5， timechar[4]=? 则填9
+        timechar[3]=(timechar[3]=='?')?'5':timechar[3];
+        timechar[4]=(timechar[4]=='?')?'9':timechar[4];
+
+        System.out.println(timechar);
+
+    }
+
+    
+}
+
 * You are given a string s, a split is called good if you can split s into 2 non-empty strings p and q where its concatenation is equal to s and the number of distinct letters in p and q are the same.
 
 Return the number of good splits you can make in s.
