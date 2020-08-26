@@ -205,7 +205,8 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
  ## Q5 maximum subarray
  * Given array N and Int K, delete subarray of any size from array N so that the number of element > K and number of element <K are equal. 
  * Find maximum length of subarray after deletion. 
-    
+ 
+    (这么写好像不是很对）
         public static int maxResultantArray(int[] arr, int k) {
             int [] sumarr= new int [arr.length];
             int totalsum=0;
@@ -249,6 +250,45 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
 
             }
             }
+-----
+public static int maxResultantArray(int[] arr, int k) {
+        int[] numGroup = new int[arr.length];
+        long totalGroupSum = 0;
+
+        for (int idx = 0; idx < arr.length; idx++) {
+            if (arr[idx] > k) {
+                numGroup[idx] = 1;
+            } else if (arr[idx] == k) {
+                numGroup[idx] = 0;
+            } else {
+                numGroup[idx] = -1;
+            }
+            totalGroupSum += numGroup[idx];
+        }
+
+        if (totalGroupSum == 0) {
+            return arr.length;
+        }
+
+        // find smallest sized subarray with sum totalGroupSum
+        HashMap<Long, Integer> prefixSumToIdx = new HashMap<>();
+        prefixSumToIdx.put(0L, -1);
+        int smallestWindowLength = arr.length;
+
+        long currSum = 0;
+        for(int i = 0; i < numGroup.length; i++) {
+            currSum += numGroup[i];
+            if(prefixSumToIdx.containsKey(currSum - totalGroupSum)) {
+                smallestWindowLength = Math.min(smallestWindowLength, i - prefixSumToIdx.get(currSum - totalGroupSum));
+                if(smallestWindowLength == totalGroupSum) {
+                    break;
+                }
+            }
+            prefixSumToIdx.put(currSum, i);
+        }
+        return arr.length - smallestWindowLength;
+    }
+    
 ## Q6 alphabet ordering
 A string is a good string if all of its characters are monotone increasing or decreasing. 
 
