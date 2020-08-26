@@ -79,5 +79,54 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
     return ways;
       }
     }
-
     
+    --------
+ ## maximum subarray
+ * Given array N and Int K, delete subarray of any size from array N so that the number of element > K and number of element <K are equal. 
+ * Find maximum length of subarray after deletion. 
+    
+        public static int maxResultantArray(int[] arr, int k) {
+            int [] sumarr= new int [arr.length];
+            int totalsum=0;
+            //create a new arr, record sum of this arr
+            for(int i=0;i<arr.length;i++){
+                if(arr[i]>k){
+                    sumarr[i]=1;
+                }
+                else if(arr[i]<k){
+                    sumarr[i]=-1;
+                }
+                else{
+                    sumarr[i]=0;
+                }
+                totalsum+=sumarr[i];
+            }
+            //Now we have to find min subarray length with sum equal to cumulative sum of new array
+            // Given an array containing 1,-1, and 0, find the minimum length subarray with sum as k == total_sum. Answer is n - subarray_len.
+
+               HashMap<Integer,Integer> map= new HashMap<>();
+                map.put(0,-1);   
+                int cursum=0;
+
+                int len=Integer.MAX_VALUE;
+
+               //left pointer 
+              int j=-1;
+                for(int i=0;i<arr.length;i++){
+                    cursum+=sumarr[i];
+                    while(j<=i){
+                    if(cursum==totalsum){
+                        j++;
+                        len=Math.min(len,i-j+1);
+                        cursum-=sumarr[j];
+                    }
+                }
+
+
+            }
+            return arr.length-len;
+
+            }
+            }
+
+
