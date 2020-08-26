@@ -2,6 +2,17 @@
 ## subarray with length equals to K
 
 * 1. HASHMAP
+本题的主要思路：
+计算出每个索引的前缀和，利用一个数组sum保存，利用一个max储存最长子数组长度；       
+
+利用HashMap储存每个前缀和和对应的索引，如果出现前缀和相同的情况，则储存较小的索引（因为要求最长子数组）
+；        
+利用一个指针i作为子数组的结尾从后向前遍历，寻找map中是否储存有key为sum[i] - k的索引，如果有则更新max；
+
+当指针的值小于等于max的值后，则无需再继续遍历；     
+
+返回max则为最终结果。        
+
           class Solution {
               public int maxSubArrayLen(int[] nums, int k) {
                   HashMap<Integer, Integer> maps = new HashMap<>();
