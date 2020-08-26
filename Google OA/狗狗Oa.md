@@ -207,6 +207,7 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
  * Find maximum length of subarray after deletion. 
  
     (这么写好像不是很对）
+    
         public static int maxResultantArray(int[] arr, int k) {
             int [] sumarr= new int [arr.length];
             int totalsum=0;
