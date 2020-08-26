@@ -102,7 +102,7 @@ All elements are unique (distinct), so one value within an array will always be 
 			int maxstart=0;
 			int index=0;
 			int maximum=Integer.MIN_VALUE;
-			for(int i=0;i<arr.length-k;i++){
+			for(int i=0;i<=arr.length-k;i++){
 			 if(arr[i]>maximum){
 			     maximum=arr[i];
 			     index=i;
