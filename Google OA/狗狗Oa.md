@@ -253,43 +253,48 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
             }
 -----
 
-	public static int maxResultantArray(int[] arr, int k) {
-		int[] numGroup = new int[arr.length];
-		long totalGroupSum = 0;
+	    
+    public static int maxResultantArray(int[] arr, int k) {
+	int[] numGroup = new int[arr.length];
+	int targetsum = 0;
 
-        for (int idx = 0; idx < arr.length; idx++) {
-            if (arr[idx] > k) {
-                numGroup[idx] = 1;
-            } else if (arr[idx] == k) {
-                numGroup[idx] = 0;
-            } else {
-                numGroup[idx] = -1;
-            }
-            totalGroupSum += numGroup[idx];
-        }
+	//generate new array
+	    for (int idx = 0; idx < arr.length; idx++) {
+		if (arr[idx] > k) {
+		    numGroup[idx] = 1;
+		} else if (arr[idx] == k) {
+		    numGroup[idx] = 0;
+		} else {
+		    numGroup[idx] = -1;
+		}
+		targetsum += numGroup[idx];
+	    }
 
-        if (totalGroupSum == 0) {
-            return arr.length;
-        }
-
-        // find smallest sized subarray with sum totalGroupSum
-        HashMap<Long, Integer> prefixSumToIdx = new HashMap<>();
-        prefixSumToIdx.put(0L, -1);
-        int smallestWindowLength = arr.length;
-
-        long currSum = 0;
-        for(int i = 0; i < numGroup.length; i++) {
-            currSum += numGroup[i];
-            if(prefixSumToIdx.containsKey(currSum - totalGroupSum)) {
-                smallestWindowLength = Math.min(smallestWindowLength, i - prefixSumToIdx.get(currSum - totalGroupSum));
-                if(smallestWindowLength == totalGroupSum) {
-                    break;
-                }
-            }
-            prefixSumToIdx.put(currSum, i);
-        }
-        return arr.length - smallestWindowLength;
+    if (targetsum == 0) {
+        return arr.length;
     }
+
+    // find smallest sized subarray with sum targetsum(array之和)
+    HashMap<Integer, Integer> map = new HashMap<>();
+          //  map:  0---> 1
+    map.put(0, -1);
+    int len = arr.length;
+
+    int currSum = 0;
+    for(int i = 0; i < numGroup.length; i++) {
+        currSum += numGroup[i];
+        if(map.containsKey(currSum - targetsum)) {
+            len = Math.min(len, i - map.get(currSum - targetsum));
+            if(len == targetsum) {
+                break;
+            }
+        }
+        map.put(currSum, i);
+    }
+    return arr.length - len;
+}
+    
+     }
     
 ## Q6 alphabet ordering
 A string is a good string if all of its characters are monotone increasing or decreasing. 
