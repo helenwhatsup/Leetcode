@@ -1,5 +1,5 @@
-## Google OA
-# Maximum Time
+# Google OA
+## Q1 Maximum Time
 * You are given a string that represents time in the format hh:mm. Some of the digits are blank (represented by ?). 
 Fill in ? such that the time represented by this string is the maximum possible. Maximum time: 23:59, minimum time: 00:00. You can assume that input string is always valid.
 
@@ -38,7 +38,7 @@ Fill in ? such that the time represented by this string is the maximum possible.
 
 
 		}
-
+## Q2 Spilt String 
 * You are given a string s, a split is called good if you can split s into 2 non-empty strings p and q where its concatenation is equal to s and the number of distinct letters in p and q are the same.
 
 Return the number of good splits you can make in s.
@@ -121,7 +121,7 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
     }
     
     --------
- ## maximum subarray
+ ## Q3 maximum subarray
  * Given array N and Int K, delete subarray of any size from array N so that the number of element > K and number of element <K are equal. 
  * Find maximum length of subarray after deletion. 
     
@@ -168,7 +168,7 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
 
             }
             }
-## alphabet ordering
+## Q4 alphabet ordering
 
 
     int main() {
