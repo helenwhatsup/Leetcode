@@ -38,6 +38,54 @@ Fill in ? such that the time represented by this string is the maximum possible.
 
 
 		}
+## Q2 Hotel Booking 
+You have to find which room is booked maximum number of times.
+Example:
+
+Input: ["+1A", "+3E", "-1A", "+4F", "+1A", "-3E"]
+Output: "1A"
+Explanation: 1A as it has been booked 2 times.
+
+
+
+	public class Main {
+	    public static void main(String[] args) {
+			String[] A = { "+1A", "+3E", "-1A", "+4F", "+1A", "+1A", "-3E", "+3E", "+3E" };
+		System.out.println(hotelbooking(A));
+		}
+	  //note substring(1): begin index=1
+
+	    public static String hotelbooking(String []rooms){
+	    Map<String,Integer>map=new HashMap<>();
+	    String maxroom="";
+	    int booktime=0;
+	    int  maxbook=0;
+	    for(String s:rooms){
+		    if(s.charAt(0)=='+'){
+		    String room=s.substring(1);
+		    map.put(room,map.getOrDefault(room, 0)+1);
+
+	//排序取最大
+		   if(map.get(room)>maxbook){
+		       maxbook=map.get(room);
+		       maxroom=room;
+		   }
+		   // 次数相同
+		   if(map.get(room)==maxbook){
+		    if(maxroom.compareTo(room)==1){ //maxroom字母排序靠前
+			maxroom=room;
+		    }
+
+		   }
+
+		}
+	    }   
+	  return maxroom;
+	    }
+	}
+
+
+
 ## Q2 Spilt String 
 * You are given a string s, a split is called good if you can split s into 2 non-empty strings p and q where its concatenation is equal to s and the number of distinct letters in p and q are the same.
 
