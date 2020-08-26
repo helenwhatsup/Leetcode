@@ -237,7 +237,7 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
               int j=-1;
                 for(int i=0;i<arr.length;i++){
                     cursum+=sumarr[i];
-                    while(j<=i){
+                   
                     if(cursum==totalsum){
                         j++;
                         len=Math.min(len,i-j+1);
@@ -252,9 +252,10 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
             }
             }
 -----
-public static int maxResultantArray(int[] arr, int k) {
-        int[] numGroup = new int[arr.length];
-        long totalGroupSum = 0;
+
+	public static int maxResultantArray(int[] arr, int k) {
+		int[] numGroup = new int[arr.length];
+		long totalGroupSum = 0;
 
         for (int idx = 0; idx < arr.length; idx++) {
             if (arr[idx] > k) {
