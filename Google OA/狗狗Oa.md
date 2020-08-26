@@ -85,6 +85,38 @@ Explanation: 1A as it has been booked 2 times.
 	}
 
 
+## Q3 Largest Subarray Length K
+* Compare all continuous subarray of length K and find the largest based on starting index. RETURN subarray
+* Basically, my interpretation is that we can look at all the possible starting indices for a starting array and compare the first value. 
+All elements are unique (distinct), so one value within an array will always be larger or smaller than another--giving us the largest subarray if we just compare that first index.
+//最后一位starting index 是 n-k
+
+		public class Main {
+		  public static void main(String args[]) {
+			int[] arr2 = new int[]{1,4,2,3,5,6};
+			System.out.println(maxResultantArray(arr2,3));
+		    }
+  
+		    public static int[] maxResultantArray(int[] arr, int k) {
+			int []result= new int [k];
+			int maxstart=0;
+			int index=0;
+			int maximum=Integer.MIN_VALUE;
+			for(int i=0;i<arr.length-k;i++){
+			 if(arr[i]>maximum){
+			     maximum=arr[i];
+			     index=i;
+			 }
+			 //得出来的是index with maximum starting point 
+			    }
+			    for(int i=0;i<k;i++){
+			       result[i]= arr[index+i];
+			    }
+			return result;
+			}
+
+		}
+
 
 ## Q2 Spilt String 
 * You are given a string s, a split is called good if you can split s into 2 non-empty strings p and q where its concatenation is equal to s and the number of distinct letters in p and q are the same.
