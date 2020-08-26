@@ -250,6 +250,10 @@ Explanation: we can get a - aaa, aa - aa, aaa- a
             }
             }
 ## Q4 alphabet ordering
+A string is a good string if all of its characters are monotone increasing or decreasing. 
+
+abcde| cba-- output=2
+gfc| bdh| dd-- output=3
 
 
     int main() {
