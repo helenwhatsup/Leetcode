@@ -115,7 +115,8 @@ All elements are unique (distinct), so one value within an array will always be 
 			return result;
 			}
 
-		}
+		} 
+		// or  return Arrays.copyOfRange(a, index, index+k);
 
 
 ## Q2 Spilt String 
