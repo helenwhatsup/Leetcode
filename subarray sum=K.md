@@ -23,6 +23,7 @@
                   for(int i=0; i<nums.length; i++){
                       cur += nums[i];
                       if(!maps.containsKey(cur)) maps.put(cur, i);
+		 //cur一直加，超过了target k，这样我们要在map中寻找一个 -indexsum+cursum=target的值。所以 cursum-target=indexsum。在map中找这个indexsum。
                       if(maps.containsKey(cur-k)){
                           ans = Math.max(ans, i - maps.get(cur-k));
                       }
