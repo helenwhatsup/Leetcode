@@ -46,6 +46,7 @@ LC题目： 39，40(done)   46，47（全排列），78，90, Q131(partition Pal
       递归终止条件：lists.add(new ArrayList(list));
           for(int i = start; i < nums.length; i++){
             // 根据题目加入某判断条件！！
+              //eg. 去重： if (i > start && nums[i] == nums[i - 1]) continue; //去掉重复的
               list.add(nums[i]); 将整数 nums[i] 添加到当前子集 
               process(list, nums, i+1); 选择路径，继续向子集中添加整数：backtrack(i + 1, curr)。
               list.remove(list.size()-1); 从 curr 中删除 nums[i] 进行回溯。
