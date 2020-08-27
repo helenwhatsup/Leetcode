@@ -60,4 +60,47 @@ LC题目： 39，40(done)   46，47（全排列），78，90, Q131(partition Pal
    -[2]-[21]-[213]
        -[23]-[231]
        
+## Q Permutation II 去重：
+* 思路：在一定会产生重复结果集的地方剪枝。     
+如果已经被选择了，用过了，跳。 if(visited[i]==true){continue;}     
+如果当前节点与他的前一个节点一样，并其他的前一个节点被撤销了选择（没有被选择）不行，continue。    
+    
+
+    class Solution {
+        public List<List<Integer>> permuteUnique(int[] nums) {
+            List<List<Integer>> res= new ArrayList<>();
+            List<Integer> list= new ArrayList<>();
+
+            if(nums.length==0|| nums==null){
+                return res;
+            }
+            Arrays.sort(nums);
+            dfs(res,list,new boolean[nums.length] ,nums);
+            return res;
+        }
+        public void dfs(List<List<Integer>> res, List<Integer> list,boolean[]visited, int[]nums){
+            HashMap<Integer,Integer> map=new HashMap<>();
+            //去重哈 思路：在一定会产生重复结果集的地方剪枝。
+            if(list.size()==nums.length){
+                res.add(new ArrayList<>(list));
+            }
+            for(int i=0;i<nums.length;i++){
+                //被选择了，用过了，我们已经选择过的节点
+                if(visited[i]==true){continue;} 
+                //接下来，如果当前节点与他的前一个节点一样，并其他的前一个节点被撤销了选择（没有被选择）不行。
+    
+             if(i>0 && nums[i] == nums[i-1] && visited[i-1]==false) continue;
+            list.add(nums[i]);
+            visited[i]=true; //改过了 
+            dfs(res,list,visited,nums);
+            list.remove(list.size()-1);
+            //改回来 
+            visited[i]=false;
+        }
+        
+        
+    }
+}
+
+       
 
