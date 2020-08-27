@@ -53,6 +53,7 @@ LC题目： 39，40(done)   46，47（全排列），78，90, Q131(partition Pal
           }
       }
 ---
+# 题目：
 ## Q Permutation
 []-[1]-[12]-[123]
        -[13]-[132]
@@ -66,18 +67,6 @@ LC题目： 39，40(done)   46，47（全排列），78，90, Q131(partition Pal
 如果当前节点与他的前一个节点一样，并其他的前一个节点被撤销了选择（没有被选择）不行，continue。    
     
 
-    class Solution {
-        public List<List<Integer>> permuteUnique(int[] nums) {
-            List<List<Integer>> res= new ArrayList<>();
-            List<Integer> list= new ArrayList<>();
-
-            if(nums.length==0|| nums==null){
-                return res;
-            }
-            Arrays.sort(nums);
-            dfs(res,list,new boolean[nums.length] ,nums);
-            return res;
-        }
         public void dfs(List<List<Integer>> res, List<Integer> list,boolean[]visited, int[]nums){
             HashMap<Integer,Integer> map=new HashMap<>();
             //去重哈 思路：在一定会产生重复结果集的地方剪枝。
