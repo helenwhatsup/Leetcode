@@ -1,5 +1,7 @@
 ## Graph Traversal模版
---
+Queue: 控制访问顺序
+
+
 * intialize graph
 
         private Map<Integer,Set<Integer>> intialgraph (int n, int[][]edges){
