@@ -1,5 +1,5 @@
 # *Leetcode*
-这是个LeetCode总结帖撒！！
+这是个LeetCode总结帖撒！！☀️😄💻
 
 # *Tag*
 ---
@@ -41,5 +41,9 @@ Easy: Recursion+ Preorder Q101,104,226,94,257,145,144, 100,  Lintcode 596.
 * 8.23 BFS： 102，107，637；204，198，91
 * 8.25 Q40，90，1525
 * 8.26 面经
-* 8.27 DFS--Permutation: Q46,47, Palindrome Partitioning, Q131, 109
+* 8.27 DFS && Backtracking --Permutation: Q46,47, Palindrome Partitioning, Q131, 109
+* 8.30 BFS Graph Traversal 
+
+
+* ToDo:  Q797(backtracking)
 
