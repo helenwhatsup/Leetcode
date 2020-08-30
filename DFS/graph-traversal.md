@@ -1,4 +1,6 @@
  ** 深度优先搜索
+
+
         public void dfs(){
             vertexList[0].wasVisited=true;
             displayVertex(0);
