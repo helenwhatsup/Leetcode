@@ -33,7 +33,7 @@
 ** Tree
 Easy: Recursion+ Preorder Q101,104,226,94,257,145,144, 100,  Lintcode 596. 
 
-  *刷题log*
+  *刷题Log*
 ---
 8.17-8.21: Tree
 * 8.20 Tree Q98，700，108，928，235，236
