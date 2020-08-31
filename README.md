@@ -43,6 +43,7 @@ Easy: Recursion+ Preorder Q101,104,226,94,257,145,144, 100,  Lintcode 596.
 * 8.26 面经
 * 8.27 DFS && Backtracking --Permutation: Q46,47, Palindrome Partitioning, Q131, 109
 * 8.30 BFS Graph Traversal Q133,Q261
+* 8.31 DFS+ Island: Q199 Q200 Q463 Q695
 
 
 * ToDo:  Q797(backtracking)
