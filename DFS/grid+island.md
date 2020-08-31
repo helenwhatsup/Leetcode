@@ -75,12 +75,13 @@
               return 0 <= r && r < grid.length 
                     && 0 <= c && c < grid[0].length;
           }
+----
 
             private void dfs(char[][] grid, int i, int j, boolean[][] used) {
-                  if(i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == '0' || used[i][j])
+                  if(i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == '0' )
                       return;
 
-                  used[i][j] = true;
+                  grid[i][j] = 2;
 
                   dfs(grid, i+1, j, used);
                   dfs(grid, i, j+1, used);
