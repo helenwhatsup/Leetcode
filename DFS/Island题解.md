@@ -114,12 +114,14 @@
 
         public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
                int oldColor=image[sr][sc];
-               DFS(image,sr,sc,oldColor,newColor);
-
-             for(int i=0;i<image.length;i++){
+                 for(int i=0;i<image.length;i++){
                  for(int j=0;j<image[0].length;j++){
+                     if(image[i][j]==oldColor){
+                      DFS(image,sr,sc,oldColor,newColor);
+                     }
                      if(image[i][j]==-1){
                          image[i][j]=newColor;
+                     }
                  }
              }
                return image;
