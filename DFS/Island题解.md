@@ -108,7 +108,8 @@
 ## Q733 FloodFill Time：O（N）N：number of pixel
 
 * 这道题和*“Surround Regin”*很像很像，也是对图的搜索标记相连区域，然后改变标记. 
-* 首先,从sr，sc的位置开始，对图——一个二维矩阵进行DFS搜索，找到从给定位置出发所有和给的值相同的位置，标记为-1。全部标记完成之后dfs会返回。
+* 首先,从sr，sc的位置开始，对图——一个二维矩阵进行DFS搜索，找到从给定位置出发所有和给的值相同的位置，标记为-1。(search every element connected to the starting pixel)
+* 全部标记完成之后dfs会返回。
 * DFS的返回条件是行列范围跳出，或值跟【sr】【sc】不相等，或已被标记。 所以我们就找到了所有值相等的路径。全部标记为-1.
 * 之后再对图进行遍历，找到所有标记为-1的位置，改成newColor完成渲染。 
 
@@ -117,6 +118,7 @@
                  for(int i=0;i<image.length;i++){
                  for(int j=0;j<image[0].length;j++){
                      if(image[i][j]==oldColor){
+                   //every element connected to the starting pixel  
                       DFS(image,sr,sc,oldColor,newColor);
                      }
                      if(image[i][j]==-1){
