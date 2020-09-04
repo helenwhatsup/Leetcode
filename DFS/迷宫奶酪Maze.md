@@ -1,24 +1,18 @@
   ## 迷宫模版
+  *  This function solves the Maze problem using  
+          Backtracking. It mainly uses solveMazeUtil()  
+          to solve the problem. It returns false if no  
+          path is possible, otherwise return true and  
+          prints the path in the form of 1s. Please note  
+          that there may be more than one solutions, this  
+          function prints one of the feasible solutions.*/
+          boolean solveMaze(int maze[][]).
      
-     public class RatMaze { 
-
+     
+    	 public class RatMaze { 
           // Size of the maze 
           static int N; 
 
-          /* A utility function to print  
-          solution matrix sol[N][N] */
-          void printSolution(int sol[][]) 
-          { 
-              for (int i = 0; i < N; i++) { 
-                  for (int j = 0; j < N; j++) 
-                      System.out.print( 
-                          " " + sol[i][j] + " "); 
-                  System.out.println(); 
-              } 
-          } 
-
-          /* A utility function to check  
-              if x, y is valid index for N*N maze */
           boolean isSafe( 
               int maze[][], int x, int y) 
           { 
@@ -27,14 +21,7 @@
                       && y < N && maze[x][y] == 1); 
           } 
 
-          /* This function solves the Maze problem using  
-          Backtracking. It mainly uses solveMazeUtil()  
-          to solve the problem. It returns false if no  
-          path is possible, otherwise return true and  
-          prints the path in the form of 1s. Please note  
-          that there may be more than one solutions, this  
-          function prints one of the feasible solutions.*/
-          boolean solveMaze(int maze[][]) 
+          
           { 
               int sol[][] = new int[N][N]; 
 
@@ -65,12 +52,9 @@
                   // mark x, y as part of solution path 
                   sol[x][y] = 1; 
 
-                  /* Move forward in x direction */
+                
                   if (solveMazeUtil(maze, x + 1, y, sol)) 
                       return true; 
-
-                  /* If moving in x direction doesn't give  
-                  solution then Move down in y direction */
                   if (solveMazeUtil(maze, x, y + 1, sol)) 
                       return true; 
 
@@ -84,19 +68,7 @@
               return false; 
           } 
 
-          public static void main(String args[]) 
-          { 
-              RatMaze rat = new RatMaze(); 
-              int maze[][] = { { 1, 0, 0, 0 }, 
-                               { 1, 1, 0, 1 }, 
-                               { 0, 1, 0, 0 }, 
-                               { 1, 1, 1, 1 } }; 
-
-              N = maze.length; 
-              rat.solveMaze(maze); 
-          } 
-      } 
-
+         
 
 -----
 
