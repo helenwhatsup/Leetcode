@@ -96,3 +96,36 @@
               rat.solveMaze(maze); 
           } 
       } 
+
+
+-----
+
+## 吃奶酪
+    public static boolean solveMaze(int maze[][]) { 
+        int n=maze.length;
+        return dfs(maze,0,0);
+
+      } 
+    public static boolean dfs(int[][]maze,int i,int j){
+        // 如果碰到0了， return false
+      if(i<0 || j<0 || i>=maze.length || j>=maze.length || maze[i][j]==0)
+			return false;
+         // end condition
+        if(maze[i][j]==9){
+            return true;
+        }
+        //标记 走过了，就沉岛思想，沉下去
+        maze[i][j]=0;
+        boolean a1,a2,a3,a4;
+        a1=dfs(maze,i+1,j);
+        a2= dfs(maze,i-1,j);
+        a3= dfs(maze,i,j+1);
+        a4= dfs(maze,i,j-1);
+        //backtrack
+        maze[i][j]=1;
+        //如果有一条路通了，就return这个
+        
+        return a1|| a2|| a3|| a4;
+        
+    }
+    
