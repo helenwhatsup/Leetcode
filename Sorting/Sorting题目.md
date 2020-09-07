@@ -9,7 +9,8 @@
 
 ## Q215. Kth Largest Element in an Array
 
-* 解法2 Quick Select:
+# 解法2 Quick Select:
+* https://www.youtube.com/watch?v=cnzIChso3cc
 
             class Solution {
                 public int findKthLargest(int[] nums, int k) {
