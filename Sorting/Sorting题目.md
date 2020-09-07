@@ -1,5 +1,5 @@
 
-## Find Kth element
+# Find Kth element
 * 1. 暴力 Arrays.sort O（nlogn）
 * 2. QuickSelect: O(n)
 * 3. Min heap: O(Nlogk) heap of size l
@@ -9,7 +9,23 @@
 
 ## Q215. Kth Largest Element in an Array
 
-# 解法2 Quick Select:
+### 解法1: heap
+             public int findKthLargest(int[] nums, int k) {
+                    //minheap of size k
+                    PriorityQueue<Integer> pq= new PriorityQueue<>();
+                    //min heap
+                    for(int i=0;i<nums.length;i++){
+                        pq.offer(nums[i]);
+                          if(pq.size()>k){
+                              pq.poll();
+                          }
+                    //a heap containing k largest elements of the array.
+
+                    }
+                      return pq.poll();
+                }
+
+### 解法2 Quick Select:
 * https://www.youtube.com/watch?v=cnzIChso3cc
 
             class Solution {
