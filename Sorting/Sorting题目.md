@@ -13,8 +13,6 @@
 
             class Solution {
                 public int findKthLargest(int[] nums, int k) {
-                    // sort O(nlogn)
-                    // quicksort/quickselect O(n)
                     int n=nums.length;
                     int left=0;
                     int right=n-1;
