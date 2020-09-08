@@ -50,10 +50,10 @@ Easy: Recursion+ Preorder Q101,104,226,94,257,145,144, 100,  Lintcode 596.
 
 * ToDo:  Q797(backtracking)
 * 9.8
-** FB  Q278      （binary search) 
-** FB  Q523       (array,math,hashMap)
-** FB  Q23        (LinkedList:   方法- Array -Recursion - PQ )
-** FB  Q125 	    (String)
+* FB  Q278      （binary search) 
+* FB  Q523       (array,math,hashMap)
+* FB  Q23        (LinkedList:   方法- Array -Recursion - PQ )
+* FB  Q125 	    (String)
 
 
 
