@@ -1,7 +1,7 @@
 # LinkedList
 https://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked%20Lists/linked%20lists.html
 
-基础：
+## 基础：
 *  cur=cur.next;//move by 1， cur指向下一个node 
 *  ListNode next = null; 
    ListNode curr = head;
@@ -19,8 +19,8 @@ return pt;
 * remove(int index)
 * That means that list.remove(1) removes the object at position 1 
 * remove(new Integer(1)) removes the first occurrence of the specified element from this list.
-
-
+-----
+## 题目
 
 ## Q23 Merge k Sorted Lists
 
