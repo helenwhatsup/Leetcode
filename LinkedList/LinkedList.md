@@ -1,3 +1,4 @@
+# LinkedList
 * remove(new Integer(1))
 
 * remove(Object o)
