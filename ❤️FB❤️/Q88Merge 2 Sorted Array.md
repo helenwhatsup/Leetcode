@@ -49,6 +49,8 @@
 ### Sol3: 从前往后Two Pointers: 
 * 需要make copy of array 1 cuz we want to return nums1. 
 * 所以-- make copy，然后比较copy，然后放入nums1.
+* Compare elements from nums1_copy and nums2  and add the smallest one into nums1.
+
 
         while ((p1 < m) && (p2 < n))
               nums1[p++] = (nums1_copy[p1] < nums2[p2]) ? nums1_copy[p1++] : nums2[p2++];
