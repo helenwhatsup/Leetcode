@@ -51,3 +51,29 @@
 
         }
     }
+-------
+
+      class Solution {
+          public int leastInterval(char[] tasks, int n) {
+              HashMap<Character,Integer> map = new HashMap<>();
+              int max=0;
+              for(Character c: tasks){
+                  //存到map里，顺便找到最大值（最频繁出现的次数）。 
+                  int counteach= map.getOrDefault(c,0)+1;
+                  max=Math.max(max,counteach);
+                  map.put(c,counteach);
+              }
+
+              int maxslot=(n + 1) * (max - 1);
+
+              //然后继续遍历map重的value，如果还有值等于max，那么就加一个位置。
+              int moreslot=0;
+               for(Map.Entry<Character, Integer> entry:map.entrySet()){
+                  if(entry.getValue() == max) moreslot++;
+              }
+
+              int c1=maxslot+moreslot;
+              int c2=tasks.length;
+            return Math.max(c1,c2);
+          }
+      }
