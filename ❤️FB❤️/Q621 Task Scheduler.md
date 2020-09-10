@@ -2,16 +2,17 @@
   https://leetcode.com/problems/task-scheduler/
   
   思路：（最高频出现字母次数-1）* cooling period = max possible idle time.如果没填满：直接 return （num of tasks+空闲时间）。
-  
+  * int[] freq= new int[26]; 用来declare26个字母 的int array，freq[c-'A']++; 来存放每个character出现的频率。
+  *  Arrays.sort(freq); //从高到低sort by frquency，所以这里A频率最高，排在最后，所以用freq[25]来拿到。 
    
    
-       class Solution {
+    class Solution {
             public int leastInterval(char[] tasks, int n) {
                   //step1. track frequency of each tasks.
                   if (tasks.length <= 1 || n < 1) return tasks.length;
                 int[] freq= new int[26]; //26个字母
                  // Declare and create an array of 26 int
-        //freq是个int array 存放着频率！！
+          //freq是个int array 存放着频率！！
                 for(char c: tasks){
                     // Subtract the integer value of character 'a', this 
                   //   puts 'A' at index 0, 'B' at index 1, and so on...
