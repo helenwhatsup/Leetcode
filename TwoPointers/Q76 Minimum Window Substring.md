@@ -1,5 +1,4 @@
-
-##LC Q76  Minimum Window Substring
+## LC Q76  Minimum Window Substring
 
 
       class Solution {
