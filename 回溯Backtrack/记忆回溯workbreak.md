@@ -61,8 +61,10 @@
                     for(int end=start;end<n;end++) {
                         if(dict.contains(s.substring(start,end+1))&&wordBreak(end+1,s,dict,mem)) 
                         {
-                        //前半部分在数组里，后半部分可以break，就把start标注成true。
-                        //如果最后一个也是true，那就是true。如果最后是false，就是false。在递归函数更新记忆数组 memo.
+                        ///前半部分在数组里，后半部分可以break，就把start标注成true。
+                //dp[i]= true means 前i位置可以用wordDict表示。 
+           // 如果dp[i]= true而且[i,j]在dict种，更新dp[j]为true然后return。
+                
                              if(mem[start]=true) return true;
                         }
                     }
