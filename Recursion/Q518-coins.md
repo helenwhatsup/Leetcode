@@ -5,10 +5,10 @@ https://leetcode.com/problems/coin-change-2/
      
 
 
-     class Solution {
-          public int change(int amount, int[] coins) {
-              return helper(0,coins,amount);   
-          }
+          class Solution {
+               public int change(int amount, int[] coins) {
+                   return helper(0,coins,amount);   
+               }
 
       public static int helper(int index,int[]coins,int sum){
           //base conditon
