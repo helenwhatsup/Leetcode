@@ -1,5 +1,7 @@
 ## Q518. Coin Change 2 递归做+Memo
 https://leetcode.com/problems/coin-change-2/
+
+* for each coin (for each index 'idx') we can memorize the amount of money we have processed and the number of possible changes we can get starting from this coin (this index 'idx') for that amount of money. 
      
      class Solution {
           public int change(int amount, int[] coins) {
