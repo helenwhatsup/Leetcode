@@ -1,5 +1,6 @@
 	class Solution {
-	//
+	// 当前的位置+jump的位置-- 再perform recursion 如果是true 那么现在的位置也是true
+	
 	    //方法1: Recursion+memo
 	//      static HashMap<Integer,Boolean>memo= new HashMap<>();
 
