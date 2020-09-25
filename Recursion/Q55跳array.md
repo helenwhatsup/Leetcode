@@ -23,7 +23,7 @@
 
 
 	// 		for (int jump = 1; jump <= nums[index]; jump++) {
-	// 			if(index + jump < nums.length){
+	// 		
 	// 				 // because any true result is sufficient enough to  prove that a jumps combination exists
 	// 				  if(dfs(i+index,nums,cache)) {
 		       // memo.put((i+index),Boolean.TRUE);
