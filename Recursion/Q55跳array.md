@@ -39,8 +39,35 @@
 	//         return false;
 
 	// 		return res;
+	for (int jump = 1; jump <= arr[cp]; jump++) {
+					if(cp + jump < arr.length){
+						/* here we use logical 'or' operator because any true
+						 * result is sufficient enough to  prove that a jumps 
+						 * combination exists with which we can reach end of
+						 * given array*/
+						rv = rv || solve(cp + jump, arr);
+					}
+				}
 
 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+				
+		for (int jump = 1; jump <= arr[cp]; jump++) {
+					if(cp + jump < arr.length){
+						/* here we use logical 'or' operator because any true
+						 * result is sufficient enough to  prove that a jumps 
+						 * combination exists with which we can reach end of
+						 * given array*/
+						rv = rv || solve(cp + jump, arr);
+					}
+				}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+		
+		
 	    //方法2: Greedy 最远位置法
 	public boolean canJump(int[] nums) {
 	      int reach=0;
