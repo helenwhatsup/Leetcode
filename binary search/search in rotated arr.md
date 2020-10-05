@@ -8,6 +8,9 @@
      用这个区间比较target，看target是否在这个区间。如果是，start=mid+1
 
 
+
+
+
        public class Solution {
            public int search(int[] nums, int target) {
                int start = 0;
@@ -16,7 +19,6 @@
                    int mid = (start + end) / 2;
                    if (nums[mid] == target)
                        return mid;
-
                    if (nums[start] <= nums[mid]){
                         if (target < nums[mid] && target >= nums[start]) 
                            end = mid - 1;
