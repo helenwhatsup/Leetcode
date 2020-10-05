@@ -7,9 +7,7 @@
 *  4. 在区间  nums【mid】<= nums【end】 升序。
      用这个区间比较target，看target是否在这个区间。如果是，start=mid+1
 
-
-
-
+------------------------------------------------------------------
 
        public class Solution {
            public int search(int[] nums, int target) {
