@@ -19,26 +19,26 @@
 
 *2. Search* 
 2.1 DFS BFS
+ **DFS**
+            for(String email: name.keySet()){
+                         List<String> list = new ArrayList<>();
+                        if (visited.add(email)) {
+                            dfs(graph,email,visited,list);
+                            Collections.sort(list);
+                            list.add(0, name.get(email));
+                            res.add(list);
 
-for(String email: name.keySet()){
-             List<String> list = new ArrayList<>();
-            if (visited.add(email)) {
-                dfs(graph,email,visited,list);
-                Collections.sort(list);
-                list.add(0, name.get(email));
-                res.add(list);
-                
-            } 
-    }
+                        } 
+                }
+
    
-   
- public void dfs(Map<String, Set<String>> graph, String email, Set<String> visited, List<String> list) {
-        list.add(email);
-        for (String next : graph.get(email)) {
-            if (visited.add(next)) {
-                dfs(graph, next, visited, list);
-            }
-        }
+          public void dfs(Map<String, Set<String>> graph, String email, Set<String> visited, List<String> list) {
+                 list.add(email);
+                 for (String next : graph.get(email)) {
+                     if (visited.add(next)) {
+                         dfs(graph, next, visited, list);
+                     }
+                 }
 
 
    
