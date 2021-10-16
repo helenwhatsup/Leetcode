@@ -1,5 +1,8 @@
       *LC332 Itinerary*: sort and poll().
-      
+       The essential step is that starting from the fixed starting vertex (airport 'JFK'), we keep following the ordered and unused edges (flights) until we get stuck at certain vertex where we have no more unvisited outgoing edges.
+    
+    
+    
       
       class Solution {
           Map<String, PriorityQueue<String>> targets = new HashMap<>();
