@@ -1,4 +1,13 @@
-338. Counting Bits (with negative number)
+338. Counting Bits (with negative number) 
+把负数搞成正数： (x<<1)>>1  ，算正数bits+1=负数bits
+
+         Using two's complement for negative numbers
+             Find the positive binary value for the negative number you want to represent.
+             Add a 0 to the front of the number, to indicate that it is positive.
+             Invert or find the complement of each bit in the number.
+             Add 1 to this number.
+
+    
 
 Method1:
 
