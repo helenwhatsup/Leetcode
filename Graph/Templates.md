@@ -22,7 +22,6 @@
  **DFS**
  
  
- 
             for(String email: name.keySet()){
                          List<String> list = new ArrayList<>();
                         if (visited.add(email)) {
@@ -108,10 +107,8 @@ Union find structure allows you to group individual things together by giving al
             res.add(emails);
         }
         return res;
-        
-    }
-}
-
+       }
+   
     class DisjointSet {
         private int[] parent;
         private int[] rank;
