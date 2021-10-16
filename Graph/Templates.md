@@ -20,6 +20,9 @@
 *2. Search* 
 2.1 DFS BFS
  **DFS**
+ 
+ 
+ 
             for(String email: name.keySet()){
                          List<String> list = new ArrayList<>();
                         if (visited.add(email)) {
@@ -46,9 +49,9 @@
 Union find structure allows you to group individual things together by giving all of the cells belonging to an island a label
    
   
-dsu.find(node x), which outputs a unique id so that two nodes have the same id if and only if they are in the same connected component, and:
-dsu.union(node x, node y), which draws an edge (x, y) in the graph, connecting the components with id find(x) and find(y) together.
 
+      dsu.find(node x), which outputs a unique id so that two nodes have the same id if and only if they are in the same connected component, and:
+      dsu.union(node x, node y), which draws an edge (x, y) in the graph, connecting the components with id find(x) and find(y) together.
 
     public void union(int[]parent,int i,int j){
         int x=find(parent,i);
@@ -63,7 +66,7 @@ dsu.union(node x, node y), which draws an edge (x, y) in the graph, connecting t
             //Such nodes have their parents indicated by a -1 说明是一个cluster
             return find(parent, parent[i]); //继续找parent[i]的parent
 }
-----------
+-------------------------------------------------------------------------------------------------------------
   #LC 721 Account Merge
    class Solution {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
