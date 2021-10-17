@@ -17,7 +17,7 @@
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------
-*LC1091*
+*LC1091. Shortest Path in Binary Matrix* https://leetcode.com/problems/shortest-path-in-binary-matrix/discuss/312706/JAVA-BFS
 
        Queue<int[]>queue=new LinkedList<>();
               queue.offer(new int[]{0,0});
