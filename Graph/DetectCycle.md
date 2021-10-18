@@ -17,7 +17,8 @@ DFS
 
            private boolean isCyclicUtil(int i, boolean[] visited,  boolean[] recStack)  { 
 
-                // Mark the current node as visited and part of recursion stack 
+                // Mark the current node as visited and part of recursion stack.  If a vertex is reached that is already in the recursion stack, then there is a cycle in the tree
+                
                 if (recStack[i])  return true; 
                 if not visited[i]:
                   visited[i] = true; 
