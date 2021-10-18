@@ -172,6 +172,44 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
 
 
 
+3. 394. Decode String  https://leetcode.com/problems/decode-string/
+
+                  class Solution {
+                      public String decodeString(String s) {
+                          Queue<Character> q = new LinkedList();
+                          for(Character c:s.toCharArray()){
+                              q.offer(c);
+                          }
+                          return dfs(q);
+
+                      }
+
+                      public String dfs(Queue<Character> q){
+                          int num=0;
+                          StringBuilder sb=new StringBuilder();
+                         while(!q.isEmpty()){
+                             Character c=q.poll();
+                             if(Character.isDigit(c)){
+                                 num=num*10+c-'0';
+                             }
+                             // not digit
+                             else if(c=='['){
+                                 String sub=dfs(q);
+                                 for(int i=0;i<num;i++){
+                                     sb.append(sub);
+                                 }
+                                 num=0;
+                             }
+                            else if(c==']'){
+                                 break;
+                             }
+                             else sb.append(c);// append not digit 
+                         }
+                          return sb.toString();
+                      }
+
+                  }
+
 **DP** -------------------------------------------------------------------------------------------------------------------------------------------
 LC 1048  https://leetcode.com/problems/longest-string-chain/
        
