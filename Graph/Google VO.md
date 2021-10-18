@@ -1,3 +1,4 @@
+**Bits**  ----------------------------------------------------------------------------------------------------------------------------------------
 338. Counting Bits (with negative number) 
 把负数搞成正数： (x<<1)>>1  ，算正数bits+1=负数bits
 
@@ -35,3 +36,27 @@ Method2:
                               }
                           }
                           return res;
+                          
+                          
+**String** ----------------------------------------------------------------------------------------------------------------------------------------
+https://leetcode.com/problems/excel-sheet-column-title/
+
+
+class Solution {
+    public String convertToTitle(int columnNumber) {
+       StringBuilder sb=new StringBuilder();
+        // AB -> 28 = 26^1 +2
+        //  ABZ -> (A+1)26^2 + (B+1)26^2+ (Z+1)26^0 = n
+        // n/26=  (A+1)26^1 + (B+1)26^1 
+        // n%26 =   Z+1
+        
+       while(columnNumber>0){
+            sb.append((char)('A'+(columnNumber-1)%26));
+            columnNumber=(columnNumber-1)/26;
+        }
+        return sb.reverse().toString();
+        
+    }
+}
+
+
