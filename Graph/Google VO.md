@@ -90,7 +90,7 @@ Method2:
                   }
                   
                   
-   2. 
+   2.  还没做，讨论！！
 input ： 1: New York 10000, 2: san fran 1000, 3: Texas 500, .... (一个index, 一个城市名，对应一个value, 总共n个城市)。
 input2: {1, 2} ny <-> san fran, {1, 4} ny <-> LA, {5, 4} chicago <-> LA, ......(从一个地方到另一个地方的航班，有m 个航班)；
 
