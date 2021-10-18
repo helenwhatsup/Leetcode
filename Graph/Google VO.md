@@ -98,3 +98,4 @@ output：pick 4 distict cities to visit, 使得整趟旅程的的value最大，�
 eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
   1000 + 10000 + xxxx + xxxxx               
   
+  * maximum spanning tree* 
