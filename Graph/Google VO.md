@@ -99,3 +99,27 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
   1000 + 10000 + xxxx + xxxxx               
   
   * maximum spanning tree* 用‎Kruskal's algorithm。设置每个航线edge weight是链接的两个城市的value和。从最大的edge开始union。不需要找到maximum spanning tree, 只要有一个connection graph包含四个城市就可以停止了。 返回经过这四个城市的最大航线。主要排除掉有些城市value重复计算和4个城市不能用一条航线通过（三个城市经过同一个城市链接
+
+
+
+#DP -------------------------------------------------------------------------------------------------------------------------------------------
+1048  https://leetcode.com/problems/longest-string-chain/
+       
+       
+                          Arrays.sort(words,(a,b)->a.length()-b.length());
+                          int maxLen=0;
+                         int[]dp=new int[words.length];
+                          for(int i=0;i<words.length;i++){ 
+                              dp[i]=1;
+                              //判断是否当前word是前面的所有string 的 predecessor
+                              for(int j=i-1;j>=0 && words[i].length() - words[j].length() <= 1;j--){
+                                  if(isPredecessor2(words[j],words[i])){
+                                      dp[i] = Math.max(dp[i], dp[j] + 1);
+                                  }
+                              }
+                               maxLen=Math.max(maxLen,dp[i]);
+                          }
+                          return maxLen;
+
+                      }
+    
