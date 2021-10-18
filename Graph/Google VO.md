@@ -59,6 +59,25 @@ Method2:
              }
          }
 
+**BFS** ----------------------------------------------------------------------------------------------------------------------------------------
+  LC690, https://leetcode.com/problems/employee-importance/
+  
+                    Queue<Employee>queue=new LinkedList<>();
+                          queue.offer(map.get(id));
+
+                          while(!queue.isEmpty()){
+                              int size=queue.size();
+                              for(int i=0;i<size;i++){
+                                  Employee cur=queue.poll();
+                                  sum+=cur.importance;
+                                  for(int sub:cur.subordinates){
+                                      queue.offer(map.get(sub));
+                                  }
+
+                              }
+                          }
+
+                                                   
 **DFS** ----------------------------------------------------------------------------------------------------------------------------------------
  1. Find the resolution of an unknown screen given getRGB(x, y). The resolution is defined as eg.(100 * 50), 其实就是一个screen的(rows * cols). 并且会提供给你一个辅助函数getRGB(x, y), if (x, y) is out of bound of the screen, it will return (-1, -1, -1), otherwise, return (R, G, B) values in each channel. 问题就是让你返回这个screen的(rows, cols). 
   
