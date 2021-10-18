@@ -98,4 +98,4 @@ output：pick 4 distict cities to visit, 使得整趟旅程的的value最大，�
 eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
   1000 + 10000 + xxxx + xxxxx               
   
-  * maximum spanning tree* 
+  * maximum spanning tree* 用‎Kruskal's algorithm。设置每个航线edge weight是链接的两个城市的value和。从最大的edge开始union。不需要找到maximum spanning tree, 只要有一个connection graph包含四个城市就可以停止了。 返回经过这四个城市的最大航线。主要排除掉有些城市value重复计算和4个城市不能用一条航线通过（三个城市经过同一个城市链接
