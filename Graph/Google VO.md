@@ -39,7 +39,7 @@ Method2:
                           
                           
 **String** ----------------------------------------------------------------------------------------------------------------------------------------
-         https://leetcode.com/problems/excel-sheet-column-title/
+ 1.  https://leetcode.com/problems/excel-sheet-column-title/
 
 
          class Solution {
@@ -103,7 +103,7 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
 
 
 **DP** -------------------------------------------------------------------------------------------------------------------------------------------
-1048  https://leetcode.com/problems/longest-string-chain/
+LC 1048  https://leetcode.com/problems/longest-string-chain/
        
        
                           Arrays.sort(words,(a,b)->a.length()-b.length());
