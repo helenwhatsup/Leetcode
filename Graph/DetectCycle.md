@@ -30,8 +30,8 @@ DFS
                           return true; 
                       else if recStack[c] return true; // node c is already visited ,check recursion stack 
 
-                  recStack[i] = false; 
+                recStack[i] = false; 
 
-                 return false; 
+                return false; 
             } 
   
