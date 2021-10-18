@@ -60,7 +60,7 @@ Method2:
          }
 
 **DFS** ----------------------------------------------------------------------------------------------------------------------------------------
- Find the resolution of an unknown screen given getRGB(x, y). The resolution is defined as eg.(100 * 50), 其实就是一个screen的(rows * cols). 并且会提供给你一个辅助函数getRGB(x, y), if (x, y) is out of bound of the screen, it will return (-1, -1, -1), otherwise, return (R, G, B) values in each channel. 问题就是让你返回这个screen的(rows, cols). 
+ 1. Find the resolution of an unknown screen given getRGB(x, y). The resolution is defined as eg.(100 * 50), 其实就是一个screen的(rows * cols). 并且会提供给你一个辅助函数getRGB(x, y), if (x, y) is out of bound of the screen, it will return (-1, -1, -1), otherwise, return (R, G, B) values in each channel. 问题就是让你返回这个screen的(rows, cols). 
   
  
                   pubic int[] findRes(Board board){
@@ -88,3 +88,13 @@ Method2:
                         dfs(x,y+1,list);
 
                   }
+                  
+                  
+   2. 
+input ： 1: New York 10000, 2: san fran 1000, 3: Texas 500, .... (一个index, 一个城市名，对应一个value, 总共n个城市)。
+input2: {1, 2} ny <-> san fran, {1, 4} ny <-> LA, {5, 4} chicago <-> LA, ......(从一个地方到另一个地方的航班，有m 个航班)；
+
+output：pick 4 distict cities to visit, 使得整趟旅程的的value最大，返回最大值。
+eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
+  1000 + 10000 + xxxx + xxxxx               
+  
