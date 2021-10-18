@@ -75,7 +75,8 @@ Method2:
 
                   }
                   public void dfs(int x, int y,list<tuple[]>list){
-                         // return condition, out of  bound
+                         // return condition, out of  bound or visited
+                        if(visited.contains(x,y)) return;
                         if(getRGB(x, y)==(-1, -1, -1)) {
                            list.add(x,y);
                            return;
