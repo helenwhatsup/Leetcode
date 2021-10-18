@@ -232,3 +232,19 @@ LC 1048  https://leetcode.com/problems/longest-string-chain/
 
                       }
     
+**Stack** -------------------------------------------------------------------------------------------------------------------------------------------
+  LC735 https://leetcode.com/problems/asteroid-collision/
+  
+       for(int a:asteroids){
+                     if(a>0) stack.push(a);
+                     else{ // negative 
+                         while(!stack.isEmpty() && stack.peek()>0 && stack.peek()<Math.abs(a)){
+                             stack.pop();
+                         }// 如果stakc的top小，说明能撞，撞出去了，pop
+
+                         if(stack.isEmpty()|| stack.peek()<0) stack.push(a);// 反方向或空
+                         else if(a+stack.peek()==0) stack.pop();
+                         // 如果stack里面的大，就不pull出来，也不把a放进去因为撞不了。
+
+                     }
+                 }
