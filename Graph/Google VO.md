@@ -111,7 +111,7 @@ Shortest Path
               }
 
 
-2. LC690, https://leetcode.com/problems/employee-importance/
+2. *LC690, https://leetcode.com/problems/employee-importance/
   
                     Queue<Employee>queue=new LinkedList<>();
                           queue.offer(map.get(id));
@@ -130,7 +130,7 @@ Shortest Path
 
                                                    
 **DFS** ----------------------------------------------------------------------------------------------------------------------------------------
- 1. Find the resolution of an unknown screen given getRGB(x, y). The resolution is defined as eg.(100 * 50), 其实就是一个screen的(rows * cols). 并且会提供给你一个辅助函数getRGB(x, y), if (x, y) is out of bound of the screen, it will return (-1, -1, -1), otherwise, return (R, G, B) values in each channel. 问题就是让你返回这个screen的(rows, cols). 
+ 1.*  Find the resolution of an unknown screen given getRGB(x, y). The resolution is defined as eg.(100 * 50), 其实就是一个screen的(rows * cols). 并且会提供给你一个辅助函数getRGB(x, y), if (x, y) is out of bound of the screen, it will return (-1, -1, -1), otherwise, return (R, G, B) values in each channel. 问题就是让你返回这个screen的(rows, cols). 
   
  
                   pubic int[] findRes(Board board){
@@ -172,7 +172,8 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
 
 
 
-3. 394. Decode String  https://leetcode.com/problems/decode-string/
+3.
+*394.* Decode String  https://leetcode.com/problems/decode-string/
 
                   class Solution {
                       public String decodeString(String s) {
