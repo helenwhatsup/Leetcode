@@ -59,6 +59,25 @@ Method2:
              }
          }
 
+**Graph** ----------------------------------------------------------------------------------------------------------------------------------------
+
+*1. Build Graph*
+   
+         for (List<String> account : accounts) {
+            String userName = account.get(0);
+            for (int i = 1; i < account.size(); i++) {
+                if (!graph.containsKey(account.get(i))) {
+                    graph.put(account.get(i), new HashSet<>());
+                }
+                name.put(account.get(i), userName);
+                
+                if (i == 1) continue;
+                graph.get(account.get(i)).add(account.get(i - 1));
+                graph.get(account.get(i - 1)).add(account.get(i));
+            }
+        }
+
+
 **BFS** ----------------------------------------------------------------------------------------------------------------------------------------
 模版
 Shortest Path 
