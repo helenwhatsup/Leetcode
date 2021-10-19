@@ -256,7 +256,41 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
                       }
 
                   }
+4.   Longest Increasing Path  https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
+                       int visited[][]=new int[m][n];
+                          for (int i = 0; i < m; i++) {
+                              for(int j=0;j<n;j++){
+                                  res=Math.max(res,dfs(matrix,i,j,visited));
+                              }
+                          }
+                          return res;
+                      }
+                      public int dfs(int[][]matrix,int i,int j, int[][]visited){
+                          // base case
 
+                          if(visited[i][j]>0){
+                              return visited[i][j];
+                          }
+                          int cur=matrix[i][j];
+                          int max=1;
+
+                          if (i-1 >= 0 && matrix[i][j] < matrix[i-1][j]) {//如上面可以走，就是当前路径+1
+                              max = Math.max(max, dfs(matrix, i-1, j, visited)+1);
+                          }
+                          if (i+1 < matrix.length && matrix[i][j] < matrix[i+1][j]) {
+                              max = Math.max(max, dfs(matrix, i+1, j, visited)+1);
+                          }
+                          if (j-1 >= 0 && matrix[i][j] < matrix[i][j-1]) {
+                              max = Math.max(max, dfs(matrix, i, j-1, visited)+1);
+                          }
+                          if (j+1 < matrix[0].length && matrix[i][j] < matrix[i][j+1]) {
+                              max = Math.max(max, dfs(matrix, i, j+1, visited)+1);
+                          }
+                          visited[i][j]=max;
+                          return max;
+                      }
+
+    
 **DP** -------------------------------------------------------------------------------------------------------------------------------------------
 LC 1048  https://leetcode.com/problems/longest-string-chain/
        
