@@ -191,7 +191,7 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
                            }
                   }
                   steps++;
-                  if(steps==k) break:
+                  if(steps==k) return res;
 
                }
                    
