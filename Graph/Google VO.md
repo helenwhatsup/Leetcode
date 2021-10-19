@@ -170,6 +170,33 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
   
   * maximum spanning tree* 用‎Kruskal's algorithm。设置每个航线edge weight是链接的两个城市的value和。从最大的edge开始union。不需要找到maximum spanning tree, 只要有一个connection graph包含四个城市就可以停止了。 返回经过这四个城市的最大航线。主要排除掉有些城市value重复计算和4个城市不能用一条航线通过（三个城市经过同一个城市链接
 
+          // adj list
+          Queue<String>queue=new LinkedList<>();
+          HashSet<String>visited=new HashSet<>();
+          int step=0;
+          int sum=0;
+          int res=0;
+          for (String key: HashMap.keySet()){  // for every city
+               queue.offer(key);
+               while(!queue.isEmpty()){
+                  int size=queue.size();
+                  for(int i=0;i<size;i++){
+                           String currentCity=queue.poll();
+                           sum+=currentCity.values;
+                           res=Math.max(sum,res);
+                           List<String>neigibors=adjList.get(currentCity);
+                           for(String nei:neigibors){
+                                queue.offer(nei);
+                                visited.add(nei);
+                           }
+                  }
+                  steps++;
+                  if(steps==k) break:
+
+               }
+                   
+          }
+         
 
 
 3.
