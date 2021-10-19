@@ -257,6 +257,9 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
 
                   }
 4.   Longest Increasing Path  https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
+
+
+
                        int visited[][]=new int[m][n];
                           for (int i = 0; i < m; i++) {
                               for(int j=0;j<n;j++){
