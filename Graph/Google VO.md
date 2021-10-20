@@ -276,19 +276,11 @@ eg: san fran -> ny -> LA -> Chicago = value, 找到最大的value。
                           }
                           int cur=matrix[i][j];
                           int max=1;
-
+                                   四个方向
                           if (i-1 >= 0 && matrix[i][j] < matrix[i-1][j]) {//如上面可以走，就是当前路径+1
                               max = Math.max(max, dfs(matrix, i-1, j, visited)+1);
                           }
-                          if (i+1 < matrix.length && matrix[i][j] < matrix[i+1][j]) {
-                              max = Math.max(max, dfs(matrix, i+1, j, visited)+1);
-                          }
-                          if (j-1 >= 0 && matrix[i][j] < matrix[i][j-1]) {
-                              max = Math.max(max, dfs(matrix, i, j-1, visited)+1);
-                          }
-                          if (j+1 < matrix[0].length && matrix[i][j] < matrix[i][j+1]) {
-                              max = Math.max(max, dfs(matrix, i, j+1, visited)+1);
-                          }
+                         
                           visited[i][j]=max;
                           return max;
                       }
@@ -314,6 +306,24 @@ LC 1048  https://leetcode.com/problems/longest-string-chain/
                           return maxLen;
 
                       }
+    
+ LC 1277 https://leetcode.com/problems/count-square-submatrices-with-all-ones/   
+ 
+ 
+                              for(int i=0;i<m;i++){
+                                       for(int j=0;j<n;j++){
+                                           if(matrix[i][j]==1){
+                                               if(i>0 && j>0){ 
+                                                dp[i][j]=1+Math.min(Math.min(dp[i-1][j],dp[i-1][j-1]), dp[i][j-1]);
+                                               }
+                                                else if(i==0 || j==0){  // 1st col 1st row
+                                                   dp[i][j] = 1; 
+                                               }
+                                           }
+
+                                       }
+                                   }
+
     
 **Stack** -------------------------------------------------------------------------------------------------------------------------------------------
   LC735 https://leetcode.com/problems/asteroid-collision/
