@@ -341,3 +341,7 @@ LC 1048  https://leetcode.com/problems/longest-string-chain/
 
                      }
                  }
+                 
+ ***Tree:***------------------------------------------------------------------------------------------------------------------------------------------
+ 366. Find Leaves of Binary Tree https://leetcode.com/problems/find-leaves-of-binary-tree/
+ 367. 
