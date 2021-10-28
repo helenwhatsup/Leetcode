@@ -325,6 +325,38 @@ LC 1048  https://leetcode.com/problems/longest-string-chain/
                                    }
 
     
+  300. Longest Increasing Subsequence  https://leetcode.com/problems/longest-increasing-subsequence/
+
+
+
+                                    class Solution {
+                                        public int lengthOfLIS(int[] nums) {
+                                            int n=nums.length;
+                                            int[]dp=new int[n];
+                                            Arrays.fill(dp,1);
+
+
+                                            for(int i=0;i<nums.length;i++){
+                                                 // for every num we seem, check back for previous ones
+                                                for(int j=0;j<i;j++){
+                                                    if(nums[j]<nums[i]){
+                                                       dp[i]=Math.max(dp[j]+1, dp[i]);
+
+                                                    }
+                                                }
+
+                                            }
+                                            int finalres=0;
+                                            for(int i=0;i<dp.length;i++){
+                                                finalres=Math.max(dp[i],finalres);
+                                            }
+                                            // iterate and find max of dp[i]
+                                            return finalres;
+
+                                        }
+                                    }
+
+  
 **Stack** -------------------------------------------------------------------------------------------------------------------------------------------
   LC735 https://leetcode.com/problems/asteroid-collision/
   
