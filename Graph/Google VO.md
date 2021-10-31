@@ -415,4 +415,48 @@ LC 1048  https://leetcode.com/problems/longest-string-chain/
                  
  ***Tree:***------------------------------------------------------------------------------------------------------------------------------------------
  366. Find Leaves of Binary Tree https://leetcode.com/problems/find-leaves-of-binary-tree/
- 367. 
+
+
+
+ ***Topo Sorting***---------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 269: https://leetcode.com/problems/alien-dictionary/
+ 207: https://leetcode.com/problems/course-schedule/
+ 
+ 
+           for(int i=0;i<numCourses;i++){
+                       map.put(i,new ArrayList<>());
+                       degreeCount.put(i,0);
+                  }
+
+                 for(int[]pre:prerequisites){    
+                     int beforeCourse=pre[1];
+                     int afterCourse=pre[0];
+                     map.get(beforeCourse).add(afterCourse);
+                     degreeCount.put(afterCourse,degreeCount.get(afterCourse)+1);
+                 }
+                for(int i:degreeCount.keySet()){
+                    if(degreeCount.get(i)==0){
+                        q.offer(i);
+                    }
+                }
+
+                 while(!q.isEmpty()){
+                     int s=q.size();
+                     for(int i=0;i<s;i++){
+                         int curCourse=q.poll();
+                         count++;
+                         for(int adj:map.get(curCourse)){
+                             degreeCount.put(adj,degreeCount.get(adj)-1);
+                             if(degreeCount.get(adj)==0){
+                                 q.offer(adj);
+                             }
+                         }
+
+                     }
+
+                 }
+                 return count==numCourses;
+             }
+         }
+
