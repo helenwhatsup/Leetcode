@@ -357,9 +357,44 @@ LC 1048  https://leetcode.com/problems/longest-string-chain/
                                             // iterate and find max of dp[i]
                                             return finalres;
 
-                                        }
-                                    }
+                                                          }
+                                                      }
 
+ 
+1027*https://leetcode.com/problems/longest-arithmetic-subsequence/ 
+
+
+                  class Solution {
+                      public int longestArithSeqLength(int[] nums) {
+                        //  [9,4,7,2,10]
+                      //    [0,0,1,0,2] 这题和LIS的区别是对于index，我们加了一个difference
+                  //dp[index][diff] equals to the length of arithmetic sequence at index with difference diff.
+
+
+                 
+                  // For each pair of indices (i,j) and difference d = A[i]-A[j] considered, we check if there was an existing chain at the index j with difference d already.
+    If yes, we can then extend the existing chain length by 1.
+                  //     Else, if not, then we can start a new chain of length 2 with this new difference d and (A[j], A[i]) as its elements.
+
+
+
+                          int n=nums.length;   
+                         HashMap<Integer, Integer>[] dp = new HashMap[n];
+                          // 0 -diff-occurance   1-diff-occurance      2-diff-occurance 
+                          // [hashmap1, hashmap2,hashmap3]
+
+                      int res=0;
+                          for(int i=0;i<n;i++){
+                               dp[i] = new HashMap<>();
+                              for(int j=0;j<i;j++){
+                                  int difference=nums[i]-nums[j];
+                                  dp[i].put(difference,dp[j].getOrDefault(difference,1)+1);
+                                  res=Math.max(res,dp[i].get(difference));
+                              }
+                          }
+                          return res;
+                      }
+                  }
   
 **Stack** -------------------------------------------------------------------------------------------------------------------------------------------
   LC735 https://leetcode.com/problems/asteroid-collision/
