@@ -151,6 +151,89 @@ Shortest Path
                               }
                           }
 
+
+3. *Follow-up: 若開車從A到B，油箱一開始有V單位油，每走一個邊就用掉一單位，用完就不能再前進，在‍‌‌‍‍‍‍‌‍‌‌‌‍‌‍‌‌‍‍‌這之前有經過加油站的話可以把油加滿，一樣求最短路徑
+
+                           Class Node{
+                               //Int OilLeft// A以某个path走到当前点还剩的油量
+                               //Int Distance // 这个path的距离
+                           HashMap<OilLeft,Distance>map=new HashMap<>();
+                                       map.put(OilLeft,Distance); // 如果oilLeft到这个点用了同样的oil，那么选短的path
+                           }
+
+                           Queue<Node>queue=new LinkedList<>();
+                           queue.offer(A);
+
+                           while(!queue.isEmpty()){
+                                 Int size=queue.size();
+                               for(int i=0;i<size;i++){
+                                   Node cur=queue.poll();
+                                       for(Node nei:cur){
+                                           if(nei.isGasStation)  {
+                                               Int updateddist=cur.get(1+nei.OilLeft); // is oil.left=V, 
+                           nei.OilLeft()=V;
+                           // 上一步的ValueSet 的minimum
+                           map.put(nei.OilLeft, 上一步的ValueSet 的minimum)；
+                           }
+
+                                           Else:{
+                                               for(int oilLeft:cur.map.keySet()){
+                                                   nei.update(oilLeft-1, cur.get(oilLeft)+1);
+                           // small就更新，如果不small直接放新的                
+
+                           }
+
+                                       visited.add(nei,OilLeft);
+                                       queue.offer(nei);
+                           }
+
+                           }
+                           }
+                           Return min(B.valueSet())
+
+4. *LC1293 
+
+                           class Solution {
+                               public int shortestPath(int[][] grid, int k) {
+                                   //coordinates and the remaining quota.
+                           // At each iteration of the loop, we pop out one element from the queue. The element contains the distance from the starting point as well as the current state which includes the current coordinate and the remaining quotas to eliminate obstacles.
+                                   //到了一个点，有很多路线到一个点。 so that we can revisit the same cell with different quotas.
+                           //一个grid--有一个state. A state refers to a unique combination of coordinates and the remaining quota.
+                                   Queue<int[]>queue=new LinkedList<>();
+                                   int m=grid.length;
+                                   int n=grid[0].length;
+                                   int[] dirs = {0, 1, 0, -1, 0};
+                                   boolean[][][] visited = new boolean[m][n][k+1]; // keep track of state
+                                   queue.offer(new int[]{0, 0, k, 0}); // row, col, k, distance
+                                   visited[0][0][k] = true;
+
+
+                                   while(!queue.isEmpty()){
+                                       int[]cur=queue.poll();
+                                       int x=cur[0];
+                                       int y=cur[1];
+                                       int quota=cur[2];
+                                       int dist=cur[3];
+                                       if(x==m-1 && y==n-1) return dist; // found result
+                                      for(int i=0;i<4;i++){
+                                          int nextx=x+dirs[i];
+                                          int nexty=y+dirs[i+1];
+                                          if(nextx<0 ||nexty<0 ||nextx>=m|| nexty>=n) continue;
+                                          // out of bound,skip
+                                           int newQuota=quota-grid[nextx][nexty];
+                                          if(newQuota>=0 && !visited[nextx][nexty][newQuota]){
+                                              queue.add(new int[]{nextx,nexty,newQuota,dist+1});
+                                              visited[nextx][nexty][newQuota]=true;
+                                          }
+                                      }      
+                                   }
+                               return -1;
+
+
+                               }
+                           }
+
+         
                                                    
 **DFS** ----------------------------------------------------------------------------------------------------------------------------------------
  1.*  Find the resolution of an unknown screen given getRGB(x, y). The resolution is defined as eg.(100 * 50), 其实就是一个screen的(rows * cols). 并且会提供给你一个辅助函数getRGB(x, y), if (x, y) is out of bound of the screen, it will return (-1, -1, -1), otherwise, return (R, G, B) values in each channel. 问题就是让你返回这个screen的(rows, cols). 
