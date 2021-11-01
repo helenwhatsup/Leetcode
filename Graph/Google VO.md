@@ -499,6 +499,39 @@ LC 1048  https://leetcode.com/problems/longest-string-chain/
  ***Tree:***------------------------------------------------------------------------------------------------------------------------------------------
  366. Find Leaves of Binary Tree https://leetcode.com/problems/find-leaves-of-binary-tree/
 
+1110 https://leetcode.com/problems/delete-nodes-and-return-forest/
+
+ */
+                                    class Solution {
+                                    ///如果一个node，他的parent被删了，且自己不再todelet list里，说明我们可以加他.
+
+                                        HashSet<Integer>deleteList;
+                                        List<TreeNode>list=new ArrayList<>();
+                                        public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
+                                            deleteList=new HashSet<>();
+                                            for(int i:to_delete){
+                                                deleteList.add(i);
+                                            }
+                                            dfs(root,true);
+
+                                            return list;
+                                        }
+                                        public TreeNode dfs(TreeNode root, boolean isRoot){
+                                            // isroot 说明没有parent，说明要么没有parent， 要么parent被删了自己没被删
+                                            if(root==null) return null;
+                                            boolean isDeleted=deleteList.contains(root.val);
+
+                                            if(!isDeleted && isRoot){
+                                                list.add(root);
+                                            }
+                                           root.left= dfs(root.left,isDeleted); //如果parent是deleted，说明下面的就是root。。 isDeleted 是parent的state
+                                        root.right= dfs(root.right,isDeleted);
+                                            if(isDeleted) return null;
+                                            else return root;
+
+                                        }
+                                    }
+
 
 
  ***Topo Sorting***---------------------------------------------------------------------------------------------------------------------------------------
